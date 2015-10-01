@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head><title>Notes</title><link rel="shortcut icon" href="logo.ico"><link rel="stylesheet" type="text/css" href="helper.css"></head>
+<body>
+  <marquee id="butlerMessage" behavior="alternate" scrollamount=15><p>Hello, how are you today?</p></marquee>
+  <p id="Console"></p>
+  <p>Todo List</p>
+  <li id="todoList"></li>
+  <div>
+    <p>List of Commands:</p>
+    <li>Change Name,  Changes AI's name.</li>
+    <li>Number,  Generates a random number.</li>
+    <li>Info,  Gives info on AI.</li>
+    <li>Apps, Opens up a Google App of your choice.</li>
+    <li>Sports, Gives info on a 3 sports.</li>
+    <li>File, Opens up a computer file.</li>
+    </div>
+  <p>Talking Points; The weather, Politics, Security</p>
+  <div>
+  <button type="button" onclick="doFunction();">Click for Request</button>
+  <button type="button"
+onclick="document.getElementById('Console').innerHTML = Date()">
+Date and Time</button>
+  <button type="button" onclick="search()">Search</button>
+  <button type="button" onclick="todo()">Todo List</button>
+</div>
+  
+<div><a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" class="mail">Gmail</a>
+<a href="https://play.spotify.com/" target="_blank" class="music">Spotify</a>
+<a href="http://khanacademy.org/" target="_blank" class="math">Khan Academy</a>
+<a href="http://www.codecademy.com/learn" target="_blank" class="code">Code Academy</a>
+<a href="https://www.curriculet.com/students/homework" target="_blank" class="read">Curriculet</a></div>
+
+  <script>
+  var userName = prompt("What is your name?");
+  function doFunction(){
+  var computerName = "Watsword"
+  var request = prompt("What can I do for you"+" "+userName+"?");
+  if (request === "Change Name"){
+  var computerName = prompt("What shall my new name be?");
+  window.alert('Okay my new name is'+' '+computerName);
+}
+  else if (request === "Number"){
+  var numberValue = Math.random();
+  window.alert("Your random number is"+" "+numberValue+".");
+  }
+  else if (request === "Homework Help"){
+      window.alert("That is cheating sir.")
+    }
+  else if (request === "Relationship Help"){
+    window.alert("Make sure that they love you for who you are.")
+  }
+  else if (request === "Info"){
+  window.alert("I am an AI or Artificial Intelligence created by Yury William Peneff.  I am programmed with a variety of different commands that can be found by looking at the commands list.")
+  }
+  else if (request === "Celebration"){
+  window.alert("Woohoo, a very good day indeed!")
+  }
+  else if (request === "Apps"){
+    var appRequest = prompt("Which Google App do you want me to open?  Docs, Sheets, Slides, or Maps?");
+    if (appRequest === "Docs"){
+      window.open("https://docs.google.com/document/u/0/");
+    }
+    else if (appRequest === "Sheets"){
+      window.open("https://docs.google.com/spreadsheets?usp=chrome_app&authuser=0");
+    }
+    else if (appRequest === "Slides"){
+      window.open("https://docs.google.com/presentation/u/0/");
+    }
+    else if (appRequest === "Maps"){
+      window.open("https://www.google.com/maps");
+    }
+  }
+  else if(request === "Sport"){
+    var sportRequest = prompt("I have several articles on hand that can help you, which sport would you like to learn how to play, Baseball, Soccer, or Football?");
+    if(sportRequest === "Baseball"){
+      window.open("http://www.wikihow.com/Play-Baseball");
+    }
+    else if(sportRequest === "Soccer"){
+      window.open("http://www.wikihow.com/Juke-or-Dodge-a-Defender-in-Football-%28Soccer%29");
+    }
+    else if(sportRequest === "Football"){
+      window.open("http://www.wikihow.com/Play-American-Football");
+    }
+  }
+  else if(request === "File"){
+    var userFile = prompt("Please type the exact name of your file.")
+    window.open(userFile);
+  }
+  else if(request === ""){
+      window.alert("Please make a request.");
+    }
+  else{
+    window.alert("I'm sorry, I cannot do that.  Please look at the commands list to see what I can do.");
+  }
+  }
+   
+  function search(){
+    var searchEngine = prompt("Which engine would you like me to use?  I accept Google, Bing, and BASE, which is for academic searches.");
+    if (searchEngine === "Google"){
+      var googleSearch = prompt("What would you like to search for?");
+      window.open("https://www.google.com/search?q="+googleSearch);
+    }
+    else if (searchEngine === "Bing"){
+      var bingSearch = prompt("What would you like to search for?");
+      window.open("http://www.bing.com/search?q="+bingSearch);
+    }
+    else if (searchEngine === "BASE"){
+      var baseSearch = prompt("What would you like to search for?");
+      window.open("http://www.base-search.net/Search/Results?lookfor="+baseSearch);
+    }
+  }
+  function todo(){
+    var todo = prompt("What do you need to do "+userName+"?");
+    document.getElementById("todoList").innerHTML= todo;
+    var list = document.creatElement("P");
+  }
+</script>
+</body>
+</html>
